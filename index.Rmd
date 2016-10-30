@@ -68,7 +68,7 @@ n1$print('chart2')
 
 We distributed 29 different kinds of vegetables this year - more than most years - with tomatoes, zucchini andsquash yielding the most (over 250 lbs of each). 
 
-```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, dev = "svg"}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=6, dev = "svg"}
 peah16 <- subset(peah, Year == 2016)
 peah16bycrop <- ddply(peah16, .(Crop), summarise, Pounds = sum(Pounds), Calories = sum(Calories))
 peah16bycrop$Crop <- reorder(peah16bycrop$Crop, peah16bycrop$Pounds)
@@ -88,7 +88,7 @@ ggplot(data = peah16bycrop) +
 
 The results by calories are similar, with a couple of high-calorie crops like beets and kale having more of an impact: 
 
-```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, dev = "svg"}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=6, dev = "svg"}
 peah16bycrop$Crop <- reorder(peah16bycrop$Crop, peah16bycrop$Calories)
 
 library(ggthemes)
@@ -106,7 +106,7 @@ ggplot(data = peah16bycrop) +
 
 The results by plot are here - congratulations to Melinda, Betsy, Bobbi and everyone else that made this such a great year!
 
-```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, dev = "svg"}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=6, dev = "svg"}
 peah16 <- subset(peah, Year == 2016)
 peah16 <- merge(peah16, names, by = "Plot.number")
 
@@ -127,7 +127,7 @@ ggplot(data = peah16byplot) +
 
 Individual results for the year are listed in the table below. 
 
-```{r, results='asis', echo = FALSE, message = FALSE, warning = FALSE, fig.height = 8, , dev = "svg"}
+```{r, results='asis', echo = FALSE, message = FALSE, warning = FALSE, fig.height = 10, , dev = "svg"}
 #Current year results by plot and by crop
 library(xtable)
 table <- ddply(peah16, .(Name, Crop), summarise, 

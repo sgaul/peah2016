@@ -329,7 +329,7 @@ The results by plot are here - congratulations to Melinda, Betsy, Bobbi and ever
 Individual results for the year are listed in the table below. 
 
 <!-- html table generated in R 3.2.1 by xtable 1.7-4 package -->
-<!-- Sat Oct 29 22:48:09 2016 -->
+<!-- Sat Oct 29 23:18:48 2016 -->
 <table border=1>
 <tr> <th> Plot.number </th> <th> Year </th> <th> Month </th> <th> Date </th> <th> Number.of.plots </th> <th> Crop </th> <th> Variety </th> <th> Pounds </th> <th> Pounds.per.plot </th> <th> Calories </th> <th> Calories.per.plot </th> <th> Name </th>  </tr>
   </table>
