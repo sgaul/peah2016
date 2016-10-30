@@ -21,7 +21,7 @@ While we are still harvesting, gardeners so far have distributed 2,400 pounds of
 
 ```{r setup, message = F, echo = F, cache = F}
 require(rCharts)
-knitr::opts_chunk$set(comment = NA, results = 'asis', tidy = F, message = T)
+knitr::opts_chunk$set(comment = NA, results = 'asis', tidy = F, message = F)
 ```
 
 
@@ -68,8 +68,10 @@ n1$print('chart2')
 
 We distributed 29 different kinds of vegetables this year - more than most years - with tomatoes, zucchini andsquash yielding the most (over 250 lbs of each). 
 
-```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, dev = "svg"}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=6, dev = "svg"}
 peah16 <- subset(peah, Year == 2016)
+peah16 <- merge(peah16, names, by = "Plot.number")
+
 peah16bycrop <- ddply(peah16, .(Crop), summarise, Pounds = sum(Pounds), Calories = sum(Calories))
 peah16bycrop$Crop <- reorder(peah16bycrop$Crop, peah16bycrop$Pounds)
 
@@ -88,7 +90,7 @@ ggplot(data = peah16bycrop) +
 
 The results by calories are similar, with a couple of high-calorie crops like beets and kale having more of an impact: 
 
-```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, dev = "svg"}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=6, dev = "svg"}
 peah16bycrop$Crop <- reorder(peah16bycrop$Crop, peah16bycrop$Calories)
 
 library(ggthemes)
@@ -106,10 +108,7 @@ ggplot(data = peah16bycrop) +
 
 The results by plot are here - congratulations to Melinda, Betsy, Bobbi and everyone else that made this such a great year!
 
-```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, dev = "svg"}
-peah16 <- subset(peah, Year == 2016)
-peah16 <- merge(peah16, names, by = "Plot.number")
-
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=6, dev = "svg"}
 peah16byplot <- ddply(peah16, .(Name), summarise, Pounds = sum(Pounds), Calories = sum(Calories))
 peah16byplot$Name <- reorder(peah16byplot$Name, peah16byplot$Calories)
 
@@ -127,9 +126,10 @@ ggplot(data = peah16byplot) +
 
 Individual results for the year are listed in the table below. 
 
-```{r, results='asis', echo = FALSE, message = FALSE, warning = FALSE, fig.height = 9, , dev = "svg"}
+```{r, results='asis', echo = FALSE, message = FALSE, warning = FALSE, fig.height = 11, , dev = "svg"}
 #Current year results by plot and by crop
 library(xtable)
+
 table <- ddply(peah16, .(Name, Crop), summarise, 
                Pounds = round(sum(Pounds),0), 
                Calories = round(sum(Calories),0))
@@ -142,13 +142,14 @@ The full data for all years can be found [here](https://docs.google.com/spreadsh
 
 We had good results for virtually everything we planted and very good yields for kale, zucchini and tomatoes. Results for most other crops were above average. 
 
-```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=12, fig.width = 10,dev = "svg"}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=12, fig.width = 8,dev = "svg"}
 yearly <- ddply(peah, 
                 .(Year, Crop), 
                 summarise, 
                 Pounds.per.plot = sum(Pounds.per.plot) / mean(Number.of.plots))
 
 yearly <- subset(yearly, Crop %in% unique(subset(ddply(yearly, .(Crop), summarise, count = length(unique(Year))), count > 5)$Crop))
+
 
 ggplot(data = yearly, aes(x = Year, y = Pounds.per.plot)) + 
   geom_line() + 
@@ -162,10 +163,11 @@ ggplot(data = yearly, aes(x = Year, y = Pounds.per.plot)) +
 
 Why else did things go so well this year? 
 
-Like last yera, we had more harvests from the garden than any prior year. Gardeners have harvested more than 450 times to date. Last year, we harvested around 400 times and no other prior year had more than 250 harvests. (This may be partly due to better reporting on harvests in the last few years.)
+Like last year, we had more harvests from the garden than any prior year. Gardeners have harvested more than 450 times to date. Last year, we harvested around 400 times and no other prior year had more than 250 harvests. (This may be partly due to better reporting on harvests in the last few years.)
 
-```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, dev = "svg"}
+```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=6, dev = "svg"}
 library(ggthemes)
+
 ggplot(data = ddply(peah, .(Year), summarise, count = length(Crop))) + 
   geom_bar(aes(x = Year, y = count), stat = "identity", width =0.5, alpha =0.4) +
   geom_hline(yintercept=c(50,100,150,200,250,300,350,400,450), col="white", lwd=1) +
@@ -174,13 +176,13 @@ ggplot(data = ddply(peah, .(Year), summarise, count = length(Crop))) +
   theme_tufte(base_size = 16, ticks = F) + 
   annotate("text", x = 2006, y = 300,  family="serif",
            label = c("Number of harvests\nper year\n2002 - 2016"))
-
 ```
 
 During the year, the most intense periods were at the end of June and July - gardeners harvested more than 250 pounds during each of these weeks. 
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, dev = "svg"}
 #Add week field to data
+
 peah$Date <- as.Date(peah$Date, format = "%m/%d/%Y")
 peah$Week = as.integer(format(strptime(peah$Date,"%Y-%m-%d"),"%W"))
 
@@ -204,6 +206,7 @@ We harvested crops by far the most often on Sunday, and least often on Saturdays
 ```{r echo = FALSE, message = FALSE, warning = FALSE, fig.height=5, dev = "svg"}
 #Summarize by day of week
 peah$WEEKDAY = weekdays(as.Date(peah$Date))
+
 peah$WEEKDAY <- factor(peah$WEEKDAY, levels = c("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"))
 
 ggplot(data = ddply(subset(peah, Year == 2016),
@@ -222,14 +225,13 @@ ggplot(data = ddply(subset(peah, Year == 2016),
 When are various crops harvested? The charts below show the weekly harvests by crop for the past several years. Crops like beans and lettuce are harvested early, tomatoes and peppers later in the year and squash, collards and kale for longer periods. 
 
 ```{r echo = FALSE, message = FALSE, warning = FALSE, dev = "svg"}
-#Create chart by week for past x years
+#Create chart by week for past 7+ years
 ggplot(data = ddply(subset(peah, Crop %in% unique(subset(ddply(yearly, .(Crop), summarise, count = length(unique(Year))), count > 7)$Crop)),
                     .(Crop, Week), 
                     summarise, 
                     Pounds = sum(Pounds, na.rm = T)), 
        aes(x = Month, y = Pounds)) + 
   geom_bar(aes(x = Week, y = Pounds), stat = "identity", width =.5, alpha =.4) +
-#  geom_hline(yintercept=c(100,200,300), col="white", lwd=1) +
   labs(x = "Week (number)", y = "Pounds harvested") + 
   scale_y_continuous(labels = NULL) + 
   theme_tufte(base_size = 16, ticks = F) + 

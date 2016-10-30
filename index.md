@@ -108,6 +108,11 @@ While we are still harvesting, gardeners so far have distributed 2,400 pounds of
  "Year": 2015,
 "Pounds":        2580.35,
 "Calories":     240780.035 
+},
+{
+ "Year": 2016,
+"Pounds":         2387.2,
+"Calories":     234271.945 
 } 
 ]
   
@@ -254,6 +259,11 @@ Here is the same result in pounds harvested.
  "Year": 2015,
 "Pounds":        2580.35,
 "Calories":     240780.035 
+},
+{
+ "Year": 2016,
+"Pounds":         2387.2,
+"Calories":     234271.945 
 } 
 ]
   
@@ -329,10 +339,112 @@ The results by plot are here - congratulations to Melinda, Betsy, Bobbi and ever
 Individual results for the year are listed in the table below. 
 
 <!-- html table generated in R 3.2.1 by xtable 1.7-4 package -->
-<!-- Sat Oct 29 23:22:27 2016 -->
+<!-- Sun Oct 30 06:46:23 2016 -->
 <table border=1>
-<tr> <th> Plot.number </th> <th> Year </th> <th> Month </th> <th> Date </th> <th> Number.of.plots </th> <th> Crop </th> <th> Variety </th> <th> Pounds </th> <th> Pounds.per.plot </th> <th> Calories </th> <th> Calories.per.plot </th> <th> Name </th>  </tr>
-  </table>
+<tr> <th> Name </th> <th> Crop </th> <th> Pounds </th> <th> Calories </th>  </tr>
+  <tr> <td> Avi / Michelle </td> <td> beets </td> <td align="right"> 2 </td> <td align="right"> 293 </td> </tr>
+  <tr> <td> Avi / Michelle </td> <td> cabbage </td> <td align="right"> 1 </td> <td align="right"> 114 </td> </tr>
+  <tr> <td> Avi / Michelle </td> <td> collards </td> <td align="right"> 6 </td> <td align="right"> 817 </td> </tr>
+  <tr> <td> Avi / Michelle </td> <td> cucumbers </td> <td align="right"> 62 </td> <td align="right"> 4256 </td> </tr>
+  <tr> <td> Avi / Michelle </td> <td> kale </td> <td align="right"> 18 </td> <td align="right"> 4143 </td> </tr>
+  <tr> <td> Avi / Michelle </td> <td> lettuce </td> <td align="right"> 36 </td> <td align="right"> 2486 </td> </tr>
+  <tr> <td> Avi / Michelle </td> <td> tomatoes </td> <td align="right"> 17 </td> <td align="right"> 1175 </td> </tr>
+  <tr> <td> Community </td> <td> cabbage </td> <td align="right"> 5 </td> <td align="right"> 568 </td> </tr>
+  <tr> <td> Community </td> <td> collards </td> <td align="right"> 14 </td> <td align="right"> 1839 </td> </tr>
+  <tr> <td> Community </td> <td> kale </td> <td align="right"> 6 </td> <td align="right"> 1476 </td> </tr>
+  <tr> <td> Community </td> <td> lettuce </td> <td align="right"> 18 </td> <td align="right"> 1226 </td> </tr>
+  <tr> <td> Community </td> <td> squash </td> <td align="right"> 26 </td> <td align="right"> 1889 </td> </tr>
+  <tr> <td> Community </td> <td> tomatoes </td> <td align="right"> 31 </td> <td align="right"> 2111 </td> </tr>
+  <tr> <td> Community </td> <td> watermelon </td> <td align="right"> 14 </td> <td align="right"> 1907 </td> </tr>
+  <tr> <td> Community </td> <td> zucchini </td> <td align="right"> 33 </td> <td align="right"> 2379 </td> </tr>
+  <tr> <td> Dan / Masha </td> <td> arugula </td> <td align="right"> 1 </td> <td align="right"> 114 </td> </tr>
+  <tr> <td> Dan / Masha </td> <td> squash </td> <td align="right"> 137 </td> <td align="right"> 9970 </td> </tr>
+  <tr> <td> Dan / Masha </td> <td> swiss chard </td> <td align="right"> 8 </td> <td align="right"> 690 </td> </tr>
+  <tr> <td> Dan / Masha </td> <td> tomatoes </td> <td align="right"> 2 </td> <td align="right"> 170 </td> </tr>
+  <tr> <td> Dan / Masha </td> <td> turnip greens </td> <td align="right"> 12 </td> <td align="right"> 1525 </td> </tr>
+  <tr> <td> Dan / Masha </td> <td> turnips </td> <td align="right"> 48 </td> <td align="right"> 6070 </td> </tr>
+  <tr> <td> Holly / Deb </td> <td> cabbage </td> <td align="right"> 2 </td> <td align="right"> 227 </td> </tr>
+  <tr> <td> Holly / Deb </td> <td> herbs </td> <td align="right"> 0 </td> <td align="right"> 82 </td> </tr>
+  <tr> <td> Holly / Deb </td> <td> kale </td> <td align="right"> 7 </td> <td align="right"> 1589 </td> </tr>
+  <tr> <td> Holly / Deb </td> <td> lettuce </td> <td align="right"> 16 </td> <td align="right"> 1090 </td> </tr>
+  <tr> <td> Holly / Deb </td> <td> squash </td> <td align="right"> 7 </td> <td align="right"> 508 </td> </tr>
+  <tr> <td> Holly / Deb </td> <td> tomatoes </td> <td align="right"> 152 </td> <td align="right"> 10317 </td> </tr>
+  <tr> <td> Jen </td> <td> basil </td> <td align="right"> 0 </td> <td align="right"> 26 </td> </tr>
+  <tr> <td> Jen </td> <td> broccoli </td> <td align="right"> 68 </td> <td align="right"> 10419 </td> </tr>
+  <tr> <td> Jen </td> <td> carrots </td> <td align="right"> 18 </td> <td align="right"> 3257 </td> </tr>
+  <tr> <td> Jen </td> <td> cucumbers </td> <td align="right"> 5 </td> <td align="right"> 340 </td> </tr>
+  <tr> <td> Jen </td> <td> kale </td> <td align="right"> 2 </td> <td align="right"> 454 </td> </tr>
+  <tr> <td> Jen </td> <td> peppers </td> <td align="right"> 4 </td> <td align="right"> 409 </td> </tr>
+  <tr> <td> Jen </td> <td> radishes </td> <td align="right"> 21 </td> <td align="right"> 1525 </td> </tr>
+  <tr> <td> Jen </td> <td> tomatoes </td> <td align="right"> 23 </td> <td align="right"> 1566 </td> </tr>
+  <tr> <td> Katherine </td> <td> basil </td> <td align="right"> 2 </td> <td align="right"> 157 </td> </tr>
+  <tr> <td> Katherine </td> <td> beans </td> <td align="right"> 8 </td> <td align="right"> 1196 </td> </tr>
+  <tr> <td> Katherine </td> <td> collards </td> <td align="right"> 2 </td> <td align="right"> 238 </td> </tr>
+  <tr> <td> Katherine </td> <td> cucumbers </td> <td align="right"> 8 </td> <td align="right"> 511 </td> </tr>
+  <tr> <td> Katherine </td> <td> kale </td> <td align="right"> 12 </td> <td align="right"> 2724 </td> </tr>
+  <tr> <td> Katherine </td> <td> peppers </td> <td align="right"> 35 </td> <td align="right"> 3155 </td> </tr>
+  <tr> <td> Katherine </td> <td> squash </td> <td align="right"> 2 </td> <td align="right"> 163 </td> </tr>
+  <tr> <td> Katherine </td> <td> tomatoes </td> <td align="right"> 1 </td> <td align="right"> 51 </td> </tr>
+  <tr> <td> Kelly </td> <td> basil </td> <td align="right"> 1 </td> <td align="right"> 104 </td> </tr>
+  <tr> <td> Kelly </td> <td> beans </td> <td align="right"> 4 </td> <td align="right"> 563 </td> </tr>
+  <tr> <td> Kelly </td> <td> cucumbers </td> <td align="right"> 3 </td> <td align="right"> 204 </td> </tr>
+  <tr> <td> Kelly </td> <td> kale </td> <td align="right"> 54 </td> <td align="right"> 12258 </td> </tr>
+  <tr> <td> Kelly </td> <td> onions </td> <td align="right"> 5 </td> <td align="right"> 908 </td> </tr>
+  <tr> <td> Kelly </td> <td> radishes </td> <td align="right"> 12 </td> <td align="right"> 872 </td> </tr>
+  <tr> <td> Kelly </td> <td> spinach </td> <td align="right"> 6 </td> <td align="right"> 627 </td> </tr>
+  <tr> <td> Kelly </td> <td> tomatoes </td> <td align="right"> 29 </td> <td align="right"> 1975 </td> </tr>
+  <tr> <td> Kelly </td> <td> watermelon </td> <td align="right"> 3 </td> <td align="right"> 409 </td> </tr>
+  <tr> <td> Larry / Don </td> <td> beans </td> <td align="right"> 44 </td> <td align="right"> 6263 </td> </tr>
+  <tr> <td> Larry / Don </td> <td> beets </td> <td align="right"> 3 </td> <td align="right"> 586 </td> </tr>
+  <tr> <td> Larry / Don </td> <td> cabbage </td> <td align="right"> 14 </td> <td align="right"> 1646 </td> </tr>
+  <tr> <td> Larry / Don </td> <td> carrots </td> <td align="right"> 4 </td> <td align="right"> 745 </td> </tr>
+  <tr> <td> Larry / Don </td> <td> lettuce </td> <td align="right"> 18 </td> <td align="right"> 1226 </td> </tr>
+  <tr> <td> Larry / Don </td> <td> peas </td> <td align="right"> 1 </td> <td align="right"> 420 </td> </tr>
+  <tr> <td> Larry / Don </td> <td> spinach </td> <td align="right"> 4 </td> <td align="right"> 418 </td> </tr>
+  <tr> <td> Larry / Don </td> <td> tomatoes </td> <td align="right"> 5 </td> <td align="right"> 340 </td> </tr>
+  <tr> <td> Leigh </td> <td> basil </td> <td align="right"> 4 </td> <td align="right"> 470 </td> </tr>
+  <tr> <td> Leigh </td> <td> beets </td> <td align="right"> 4 </td> <td align="right"> 781 </td> </tr>
+  <tr> <td> Leigh </td> <td> cabbage </td> <td align="right"> 3 </td> <td align="right"> 340 </td> </tr>
+  <tr> <td> Leigh </td> <td> collards </td> <td align="right"> 2 </td> <td align="right"> 306 </td> </tr>
+  <tr> <td> Leigh </td> <td> cucumbers </td> <td align="right"> 19 </td> <td align="right"> 1311 </td> </tr>
+  <tr> <td> Leigh </td> <td> kale </td> <td align="right"> 32 </td> <td align="right"> 7253 </td> </tr>
+  <tr> <td> Leigh </td> <td> leeks </td> <td align="right"> 4 </td> <td align="right"> 969 </td> </tr>
+  <tr> <td> Leigh </td> <td> lettuce </td> <td align="right"> 7 </td> <td align="right"> 477 </td> </tr>
+  <tr> <td> Leigh </td> <td> radishes </td> <td align="right"> 4 </td> <td align="right"> 327 </td> </tr>
+  <tr> <td> Leigh </td> <td> squash </td> <td align="right"> 58 </td> <td align="right"> 4249 </td> </tr>
+  <tr> <td> Leigh </td> <td> swiss chard </td> <td align="right"> 5 </td> <td align="right"> 431 </td> </tr>
+  <tr> <td> Leigh </td> <td> tomatoes </td> <td align="right"> 4 </td> <td align="right"> 306 </td> </tr>
+  <tr> <td> Leigh </td> <td> watermelon </td> <td align="right"> 14 </td> <td align="right"> 1907 </td> </tr>
+  <tr> <td> Leigh </td> <td> zucchini </td> <td align="right"> 19 </td> <td align="right"> 1380 </td> </tr>
+  <tr> <td> Leslee </td> <td> beets </td> <td align="right"> 62 </td> <td align="right"> 12201 </td> </tr>
+  <tr> <td> Leslee </td> <td> brussel sprouts </td> <td align="right"> 2 </td> <td align="right"> 293 </td> </tr>
+  <tr> <td> Leslee </td> <td> cilantro </td> <td align="right"> 0 </td> <td align="right"> 26 </td> </tr>
+  <tr> <td> Leslee </td> <td> collards </td> <td align="right"> 60 </td> <td align="right"> 8240 </td> </tr>
+  <tr> <td> Leslee </td> <td> kale </td> <td align="right"> 6 </td> <td align="right"> 1248 </td> </tr>
+  <tr> <td> Leslee </td> <td> lettuce </td> <td align="right"> 4 </td> <td align="right"> 306 </td> </tr>
+  <tr> <td> Leslee </td> <td> squash </td> <td align="right"> 20 </td> <td align="right"> 1416 </td> </tr>
+  <tr> <td> Leslee </td> <td> tomatoes </td> <td align="right"> 8 </td> <td align="right"> 545 </td> </tr>
+  <tr> <td> Madeline / Scott / Sue </td> <td> lettuce </td> <td align="right"> 2 </td> <td align="right"> 136 </td> </tr>
+  <tr> <td> Madeline / Scott / Sue </td> <td> tomatoes </td> <td align="right"> 168 </td> <td align="right"> 11475 </td> </tr>
+  <tr> <td> Melinda / Betsy / Bobbi </td> <td> broccoli </td> <td align="right"> 8 </td> <td align="right"> 1312 </td> </tr>
+  <tr> <td> Melinda / Betsy / Bobbi </td> <td> cabbage </td> <td align="right"> 10 </td> <td align="right"> 1135 </td> </tr>
+  <tr> <td> Melinda / Betsy / Bobbi </td> <td> collards </td> <td align="right"> 9 </td> <td align="right"> 1226 </td> </tr>
+  <tr> <td> Melinda / Betsy / Bobbi </td> <td> kale </td> <td align="right"> 2 </td> <td align="right"> 454 </td> </tr>
+  <tr> <td> Melinda / Betsy / Bobbi </td> <td> lettuce </td> <td align="right"> 4 </td> <td align="right"> 306 </td> </tr>
+  <tr> <td> Melinda / Betsy / Bobbi </td> <td> tomatoes </td> <td align="right"> 2 </td> <td align="right"> 136 </td> </tr>
+  <tr> <td> Melinda / Betsy / Bobbi </td> <td> zucchini </td> <td align="right"> 390 </td> <td align="right"> 28311 </td> </tr>
+  <tr> <td> Michelle / Eli / Robin </td> <td> collards </td> <td align="right"> 2 </td> <td align="right"> 272 </td> </tr>
+  <tr> <td> Michelle / Eli / Robin </td> <td> okra </td> <td align="right"> 5 </td> <td align="right"> 787 </td> </tr>
+  <tr> <td> Michelle / Eli / Robin </td> <td> peppers </td> <td align="right"> 46 </td> <td align="right"> 4177 </td> </tr>
+  <tr> <td> Michelle / Eli / Robin </td> <td> squash </td> <td align="right"> 10 </td> <td align="right"> 690 </td> </tr>
+  <tr> <td> Rabbi / Rafaella </td> <td> corn </td> <td align="right"> 13 </td> <td align="right"> 5784 </td> </tr>
+  <tr> <td> Rabbi / Rafaella </td> <td> swiss chard </td> <td align="right"> 2 </td> <td align="right"> 173 </td> </tr>
+  <tr> <td> Rabbi / Rafaella </td> <td> tomatoes </td> <td align="right"> 14 </td> <td align="right"> 936 </td> </tr>
+  <tr> <td> Rabbi / Rafaella </td> <td> zucchini </td> <td align="right"> 8 </td> <td align="right"> 581 </td> </tr>
+  <tr> <td> Stephen </td> <td> beans </td> <td align="right"> 1 </td> <td align="right"> 141 </td> </tr>
+  <tr> <td> Stephen </td> <td> squash </td> <td align="right"> 12 </td> <td align="right"> 872 </td> </tr>
+  <tr> <td> Stephen </td> <td> tomatoes </td> <td align="right"> 232 </td> <td align="right"> 15799 </td> </tr>
+   </table>
 
 The full data for all years can be found [here](https://docs.google.com/spreadsheet/ccc?key=0AlYsW526rxsmdDhIVzM0VDYzRkdLOXlvcldfQkJtcnc&usp=sharing). 
 
@@ -344,7 +456,7 @@ We had good results for virtually everything we planted and very good yields for
 
 Why else did things go so well this year? 
 
-Like last yera, we had more harvests from the garden than any prior year. Gardeners have harvested more than 450 times to date. Last year, we harvested around 400 times and no other prior year had more than 250 harvests. (This may be partly due to better reporting on harvests in the last few years.)
+Like last year, we had more harvests from the garden than any prior year. Gardeners have harvested more than 450 times to date. Last year, we harvested around 400 times and no other prior year had more than 250 harvests. (This may be partly due to better reporting on harvests in the last few years.)
 
 ![plot of chunk unnamed-chunk-6](assets/fig/unnamed-chunk-6-1.svg) 
 
@@ -354,10 +466,7 @@ During the year, the most intense periods were at the end of June and July - gar
 
 We harvested crops by far the most often on Sunday, and least often on Saturdays and Mondays. (Saturday visits may be after sundown or data entry errors on my part.)
 
-
-```
-Error in eval(expr, envir, enclos): object 'visits' not found
-```
+![plot of chunk unnamed-chunk-8](assets/fig/unnamed-chunk-8-1.svg) 
 
 When are various crops harvested? The charts below show the weekly harvests by crop for the past several years. Crops like beans and lettuce are harvested early, tomatoes and peppers later in the year and squash, collards and kale for longer periods. 
 

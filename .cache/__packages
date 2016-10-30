@@ -1,7 +1,7 @@
 base
-devtools
 slidify
 rCharts
+devtools
 ggplot2
 reshape
 plyr
