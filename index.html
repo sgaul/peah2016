@@ -1,0 +1,398 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pe'ah Garden stats</title>
+    <link rel="stylesheet" href="libraries/frameworks/minimal/stylesheets/styles.css">
+    <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        <link rel=stylesheet href="libraries/widgets/nvd3/css/nv.d3.css"></link>
+<link rel=stylesheet href="libraries/widgets/nvd3/css/rNVD3.css"></link>
+
+    <script src="libraries/widgets/nvd3/js/jquery-1.8.2.min.js"></script>
+<script src="libraries/widgets/nvd3/js/d3.v3.min.js"></script>
+<script src="libraries/widgets/nvd3/js/nv.d3.min-new.js"></script>
+<script src="libraries/widgets/nvd3/js/fisheye.js"></script>
+
+  </head>
+  <body>
+    <div class="wrapper">
+<header>
+  <h1>Pe'ah Garden stats</h1>
+  <p>Results for 2016</p>
+    <ol>
+    </ol>
+</header>
+
+      <section>
+        <h2>2016 overall results</h2>
+<p>We had great results again in 2016! </p>
+
+<p>We are on track for a great harvest again in 2016, even more than <a href="http://sgaul.github.io/peah2015/">close to 2015, which was the previous highest yield ever</a>.    </p>
+
+<p>While we are still harvesting, gardeners so far have distributed 2,400 pounds of vegetables or about 235,000 calories - roughly three months of food for an adult. This is on track with last year&#39;s totals, which were the previous highest ever.</p>
+
+<div id = 'chart1' class = 'rChart nvd3'></div>
+
+<script type='text/javascript'>
+ $(document).ready(function(){
+      drawchart1()
+    });
+    function drawchart1(){  
+      var opts = {
+ "dom": "chart1",
+"width":    500,
+"height":    300,
+"x": "Year",
+"y": "Calories",
+"type": "discreteBarChart",
+"id": "chart1" 
+},
+        data = [
+ {
+ "Year": 2002,
+"Pounds":        1273.25,
+"Calories": 114403.9329167 
+},
+{
+ "Year": 2003,
+"Pounds":          778.5,
+"Calories":       86920.57 
+},
+{
+ "Year": 2004,
+"Pounds":        1302.25,
+"Calories":      140183.85 
+},
+{
+ "Year": 2005,
+"Pounds":         1392.5,
+"Calories":      151554.28 
+},
+{
+ "Year": 2006,
+"Pounds":        1321.25,
+"Calories":     134382.865 
+},
+{
+ "Year": 2007,
+"Pounds":        1686.25,
+"Calories":  153063.073334 
+},
+{
+ "Year": 2008,
+"Pounds":            898,
+"Calories":    90317.34125 
+},
+{
+ "Year": 2009,
+"Pounds":           1028,
+"Calories": 100385.8316667 
+},
+{
+ "Year": 2010,
+"Pounds":         911.75,
+"Calories":      84708.455 
+},
+{
+ "Year": 2011,
+"Pounds":           1269,
+"Calories":      147313.92 
+},
+{
+ "Year": 2012,
+"Pounds":        1901.23,
+"Calories":    164506.3552 
+},
+{
+ "Year": 2013,
+"Pounds":            608,
+"Calories":      67887.755 
+},
+{
+ "Year": 2014,
+"Pounds":           2634,
+"Calories":      260500.66 
+},
+{
+ "Year": 2015,
+"Pounds":        2580.35,
+"Calories":     240780.035 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .forceY([      0, 1.7e+05 ])
+  .margin({
+ "left":     80 
+})
+          
+        chart.xAxis
+  .axisLabel("Year")
+
+        
+        
+        chart.yAxis
+  .tickFormat(function(d) {return d3.format(',.0f')(d)})
+  .axisLabel("Calories")
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+
+<p>Here is the same result in pounds harvested. </p>
+
+<div id = 'chart2' class = 'rChart nvd3'></div>
+
+<script type='text/javascript'>
+ $(document).ready(function(){
+      drawchart2()
+    });
+    function drawchart2(){  
+      var opts = {
+ "dom": "chart2",
+"width":    500,
+"height":    300,
+"x": "Year",
+"y": "Pounds",
+"type": "discreteBarChart",
+"id": "chart2" 
+},
+        data = [
+ {
+ "Year": 2002,
+"Pounds":        1273.25,
+"Calories": 114403.9329167 
+},
+{
+ "Year": 2003,
+"Pounds":          778.5,
+"Calories":       86920.57 
+},
+{
+ "Year": 2004,
+"Pounds":        1302.25,
+"Calories":      140183.85 
+},
+{
+ "Year": 2005,
+"Pounds":         1392.5,
+"Calories":      151554.28 
+},
+{
+ "Year": 2006,
+"Pounds":        1321.25,
+"Calories":     134382.865 
+},
+{
+ "Year": 2007,
+"Pounds":        1686.25,
+"Calories":  153063.073334 
+},
+{
+ "Year": 2008,
+"Pounds":            898,
+"Calories":    90317.34125 
+},
+{
+ "Year": 2009,
+"Pounds":           1028,
+"Calories": 100385.8316667 
+},
+{
+ "Year": 2010,
+"Pounds":         911.75,
+"Calories":      84708.455 
+},
+{
+ "Year": 2011,
+"Pounds":           1269,
+"Calories":      147313.92 
+},
+{
+ "Year": 2012,
+"Pounds":        1901.23,
+"Calories":    164506.3552 
+},
+{
+ "Year": 2013,
+"Pounds":            608,
+"Calories":      67887.755 
+},
+{
+ "Year": 2014,
+"Pounds":           2634,
+"Calories":      260500.66 
+},
+{
+ "Year": 2015,
+"Pounds":        2580.35,
+"Calories":     240780.035 
+} 
+]
+  
+      if(!(opts.type==="pieChart" || opts.type==="sparklinePlus" || opts.type==="bulletChart")) {
+        var data = d3.nest()
+          .key(function(d){
+            //return opts.group === undefined ? 'main' : d[opts.group]
+            //instead of main would think a better default is opts.x
+            return opts.group === undefined ? opts.y : d[opts.group];
+          })
+          .entries(data);
+      }
+      
+      if (opts.disabled != undefined){
+        data.map(function(d, i){
+          d.disabled = opts.disabled[i]
+        })
+      }
+      
+      nv.addGraph(function() {
+        var chart = nv.models[opts.type]()
+          .width(opts.width)
+          .height(opts.height)
+          
+        if (opts.type != "bulletChart"){
+          chart
+            .x(function(d) { return d[opts.x] })
+            .y(function(d) { return d[opts.y] })
+        }
+          
+         
+        chart
+  .forceY([      0,   1700 ])
+  .margin({
+ "left":     80 
+})
+          
+        chart.xAxis
+  .axisLabel("Year")
+
+        
+        
+        chart.yAxis
+  .tickFormat(function(d) {return d3.format(',.0f')(d)})
+  .axisLabel("Pounds")
+      
+       d3.select("#" + opts.id)
+        .append('svg')
+        .datum(data)
+        .transition().duration(500)
+        .call(chart);
+
+       nv.utils.windowResize(chart.update);
+       return chart;
+      });
+    };
+</script>
+
+<h2>2016 individual results</h2>
+
+<p>We distributed 29 different kinds of vegetables this year - more than most years - with tomatoes, zucchini andsquash yielding the most (over 250 lbs of each). </p>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.svg" alt="plot of chunk unnamed-chunk-1"> </p>
+
+<p>The results by calories are similar, with a couple of high-calorie crops like beets and kale having more of an impact: </p>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.svg" alt="plot of chunk unnamed-chunk-2"> </p>
+
+<p>The results by plot are here - congratulations to Melinda, Betsy, Bobbi and everyone else that made this such a great year!</p>
+
+<p><img src="assets/fig/unnamed-chunk-3-1.svg" alt="plot of chunk unnamed-chunk-3"> </p>
+
+<p>Individual results for the year are listed in the table below. </p>
+
+<!-- html table generated in R 3.2.1 by xtable 1.7-4 package -->
+
+<!-- Sat Oct 29 22:48:09 2016 -->
+
+<table border=1>
+<tr> <th> Plot.number </th> <th> Year </th> <th> Month </th> <th> Date </th> <th> Number.of.plots </th> <th> Crop </th> <th> Variety </th> <th> Pounds </th> <th> Pounds.per.plot </th> <th> Calories </th> <th> Calories.per.plot </th> <th> Name </th>  </tr>
+  </table>
+
+<p>The full data for all years can be found <a href="https://docs.google.com/spreadsheet/ccc?key=0AlYsW526rxsmdDhIVzM0VDYzRkdLOXlvcldfQkJtcnc&amp;usp=sharing">here</a>. </p>
+
+<h2>Comparison with prior years</h2>
+
+<p>We had good results for virtually everything we planted and very good yields for kale, zucchini and tomatoes. Results for most other crops were above average. </p>
+
+<p><img src="assets/fig/unnamed-chunk-5-1.svg" alt="plot of chunk unnamed-chunk-5"> </p>
+
+<p>Why else did things go so well this year? </p>
+
+<p>Like last yera, we had more harvests from the garden than any prior year. Gardeners have harvested more than 450 times to date. Last year, we harvested around 400 times and no other prior year had more than 250 harvests. (This may be partly due to better reporting on harvests in the last few years.)</p>
+
+<p><img src="assets/fig/unnamed-chunk-6-1.svg" alt="plot of chunk unnamed-chunk-6"> </p>
+
+<p>During the year, the most intense periods were at the end of June and July - gardeners harvested more than 250 pounds during each of these weeks. </p>
+
+<p><img src="assets/fig/unnamed-chunk-7-1.svg" alt="plot of chunk unnamed-chunk-7"> </p>
+
+<p>We harvested crops by far the most often on Sunday, and least often on Saturdays and Mondays. (Saturday visits may be after sundown or data entry errors on my part.)</p>
+
+<pre><code>Error in eval(expr, envir, enclos): object &#39;visits&#39; not found
+</code></pre>
+
+<p>When are various crops harvested? The charts below show the weekly harvests by crop for the past several years. Crops like beans and lettuce are harvested early, tomatoes and peppers later in the year and squash, collards and kale for longer periods. </p>
+
+<p><img src="assets/fig/unnamed-chunk-9-1.svg" alt="plot of chunk unnamed-chunk-9"> </p>
+
+      </section>
+      <footer>
+        <p>Maintained by <a href="http://github.com/">
+          Scott Gaul
+        </a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by 
+          <a href="https://github.com/orderedlist">orderedlist</a></small>
+        </p>
+      </footer>    </div>
+    <script src="libraries/frameworks/minimal/javascripts/scale.fix.js"></script>
+  </body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
